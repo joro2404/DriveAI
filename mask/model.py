@@ -30,3 +30,26 @@ model.add(Dense(2,activation='softmax'))
 
 
 model.compile(loss='categorical_crossentropy',optimizer='adam',metrics=['accuracy'])
+
+train_data,test_data,train_target,test_target=train_test_split(data,target,test_size=0.1)
+
+checkpoint = ModelCheckpoint(filepath='checkpoints/model-{epoch:03d}.hdf5',monitor='val_loss',verbose=0,save_best_only=True,mode='auto')
+history=model.fit(train_data,train_target,epochs=20,callbacks=[checkpoint],validation_split=0.2)
+
+plt.plot(history.history['loss'],'r',label='training loss')
+plt.plot(history.history['val_loss'],label='validation loss')
+plt.xlabel('# epochs')
+plt.ylabel('loss')
+plt.legend()
+plt.show()
+
+
+
+plt.plot(history.history['accuracy'],'r',label='training accuracy')
+plt.plot(history.history['val_accuracy'],label='validation accuracy')
+plt.xlabel('# epochs')
+plt.ylabel('loss')
+plt.legend()
+plt.show()
+
+print(model.evaluate(test_data,test_target))
