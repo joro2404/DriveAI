@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 
 
-model = load_model('checkpoints/model-020.hdf5')
+model = load_model('checkpoints/model-013.hdf5')
 
 face_clsfr=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
