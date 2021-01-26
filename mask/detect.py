@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 from tensorflow.keras.models import load_model
 
-model=load_model("./checkpoints/model-013.hdf5")
+model=load_model("./checkpoints/model-009.hdf5")
 
 results={0:'without mask',1:'mask'}
 GR_dict={0:(0,0,255),1:(0,255,0)}

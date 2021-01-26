@@ -10,7 +10,7 @@ from data import validation_generator, train_generator
 
 
 show_accuracy = 0
-Show_loss = 0
+show_loss = 0
 
 
 model=Sequential()
@@ -37,7 +37,7 @@ checkpoint = ModelCheckpoint(filepath='checkpoints/model-{epoch:03d}.hdf5',monit
 history = model.fit_generator(train_generator,epochs=10,validation_data=validation_generator,callbacks=[checkpoint])
 
 
-if(Show_loss):
+if(show_loss):
     plt.plot(history.history['loss'],'r',label='training loss')
     plt.plot(history.history['val_loss'],label='validation loss')
     plt.xlabel('# epochs')
