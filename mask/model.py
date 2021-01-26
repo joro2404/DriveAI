@@ -8,6 +8,7 @@ from tensorflow.keras.callbacks import ModelCheckpoint
 from data import validation_generator, train_generator
 
 
+
 show_accuracy = 0
 Show_loss = 0
 

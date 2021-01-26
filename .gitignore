@@ -1,5 +1,8 @@
 #mask
 mask/data
+mask/*.npy
+mask/checkpoints
+mask/*xml
 
 
 # Byte-compiled / optimized / DLL files
