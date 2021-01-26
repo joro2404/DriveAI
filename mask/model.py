@@ -54,4 +54,4 @@ if(show_accuracy):
     plt.legend()
     plt.show()
 
-print(model.evaluate(train_generator,validation_generator))
+# print(model.evaluate(train_generator,validation_generator))
