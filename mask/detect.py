@@ -26,9 +26,7 @@ while True:
         face_img = im[y:y+h, x:x+w]
         rerect_sized=cv2.resize(face_img,(150,150))
         normalized=rerect_sized/255.0
-        print(normalized)
         reshaped=np.reshape(normalized,(1,150,150,3))
-        print(reshaped)
         reshaped = np.vstack([reshaped])
         result=model.predict(reshaped)
 
