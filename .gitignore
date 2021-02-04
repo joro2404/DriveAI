@@ -4,6 +4,12 @@ mask/*.npy
 mask/checkpoints
 mask/*xml
 
+#emotion
+emotion/data
+emotion/*.npy
+emotion/checkpoints
+emotion/*xml
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
