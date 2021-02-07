@@ -62,3 +62,13 @@ model.add(Flatten())
 model.add(Dense(1024, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(7, activation='softmax'))
+
+model.compile(loss='categorical_crossentropy',optimizer='adam',metrics=['accuracy'])
+checkpoint = ModelCheckpoint(filepath='checkpoints/model-{epoch:03d}.hdf5', save_weights_only=True, monitor='val_accuracy',save_best_only=True,mode='auto')
+model_info = model.fit_generator(
+        train_generator,
+        epochs=num_epoch,
+        validation_data=validation_generator,
+        callbacks=[checkpoint])
+
+plot_model_history(model_info)
