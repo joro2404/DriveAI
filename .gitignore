@@ -10,6 +10,9 @@ emotion/*.npy
 emotion/checkpoints
 emotion/*xml
 
+#app
+app/secrets.py
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

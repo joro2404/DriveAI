@@ -7,6 +7,8 @@ model=load_model("./checkpoints/model-009.hdf5")
 results={0:'without mask',1:'mask'}
 GR_dict={0:(0,0,255),1:(0,255,0)}
 
+cv2.ocl.setUseOpenCL(False)
+
 rect_size = 4
 cap = cv2.VideoCapture(0) 
 
@@ -44,5 +46,4 @@ while True:
         break
 
 cap.release()
-
 cv2.destroyAllWindows()
