@@ -1,4 +1,4 @@
 # DriveAI
 <br />
-Download dataset for CNN for detecting masks - [https://www.google.com/search?]<br />
-Download dataset for CNN for detecting emotions - [https://www.google.com/search?]
+Download dataset for CNN for detecting masks - [https://todo.microsoft.com/]<br />
+Download dataset for CNN for detecting emotions - [https://todo.microsoft.com/]
