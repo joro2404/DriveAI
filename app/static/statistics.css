@@ -1,0 +1,149 @@
+.pie-chart {
+	background:
+		radial-gradient(
+			circle closest-side,
+			white 0,
+			white 30%,
+			transparent 30%,
+			transparent 50%,
+			white 0
+		),
+		conic-gradient(
+			from 0deg,
+			#9ecdff 0,
+			#9ecdff 66%,
+			#615c8a 0,
+			#615c8a 0%,
+			#ff7578 0,
+			#ff7578 100%,
+			#787878 0,
+			#787878 0%,
+			#bfbfbf 0,
+			#bfbfbf 0%
+	);
+	position: relative;
+	width: 500px;
+	min-height: 350px;
+	margin: 0;
+	outline: 1px solid #ccc;
+}
+.pie-chart h2 {
+	position: absolute;
+	margin: 1rem;
+}
+.pie-chart cite {
+	position: absolute;
+	bottom: 0;
+	font-size: 80%;
+	padding: 1rem;
+	color: gray;
+}
+.pie-chart figcaption {
+	position: absolute;
+	bottom: 1em;
+	right: 1em;
+	font-size: smaller;
+	text-align: right;
+}
+.pie-chart span:after {
+	display: inline-block;
+	content: "";
+	width: 0.8em;
+	height: 0.8em;
+	margin-left: 0.4em;
+	height: 0.8em;
+	border-radius: 0.2em;
+	background: currentColor;
+}
+
+
+
+.chart {
+    --scale: 100;
+  
+    /* Setup the grid */
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-rows: repeat(var(--scale), minmax(0, 1fr)) 1.4rem;
+    grid-column-gap: 5px;
+  
+    /* Generate background guides */
+    /* (sub-pixel rounding errors make this imperfect) */
+    --line-every: 10;
+    background-image: linear-gradient(to bottom, #ccc 1px, transparent 1px);
+    background-size: 100% calc((100% - 1.4rem) / var(--scale) * var(--line-every));
+    
+    /* other styles… */
+    margin: 2em auto 1em;
+    padding: 0 1em;
+    position: relative;
+    max-width: 20vw;
+    height: 20vw;
+  }
+  
+  .chart::after {
+    background: #fff;
+    bottom: 0;
+    content: ' ';
+    height: 1.4rem;
+    left: 0;
+    position: absolute;
+    right: 0;
+  }
+  
+  
+  /* Dates… */
+  /* ------ */
+  
+  .date {
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    grid-row-start: -2;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+  }
+  
+  
+  /* Each bar on the graph… */
+  /* ---------------------- */
+  
+  .bar {
+    grid-row: var(--start) / -2;
+    
+    /* Background-Color */
+    background-image: linear-gradient(to right, green, yellow, orange, red);
+    background-size: 1600% 100%;
+    background-position: calc(var(--start) * 1%) 0;
+    
+    /* Other styles… */
+    border-radius: 5px 5px 0 0;
+    color: #000;
+    list-style: none;
+    position: relative;
+  }
+  
+  .value {
+    background: #fff;
+    bottom: 100%;  
+    display: inline-block;
+    left: 50%;
+    padding: 0 0.4em;
+    position: absolute;
+    transform: translate(-50%, -1px);
+  }
+  
+  
+  /* Global helpers… */
+  /* --------------- */
+  
+  :root {
+    font-size: 80%;
+    font-family: sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  

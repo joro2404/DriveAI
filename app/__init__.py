@@ -2,11 +2,8 @@ from flask import Flask
 from .secrets import secret_key, mail_username, mail_password
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-from flask_mail import Mail
 import os
 
-
-mail = Mail()
 db = SQLAlchemy()
 
 

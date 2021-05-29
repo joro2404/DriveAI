@@ -2,9 +2,9 @@ from flask import Blueprint, render_template, request, redirect, url_for, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, logout_user, login_required, current_user
 from .models import User
-from . import db, mail, secret_key
+from . import db, secret_key
 from itsdangerous import URLSafeTimedSerializer, SignatureExpired
-from flask_mail import Message
+
 
 
 auth = Blueprint('auth', __name__)
@@ -76,17 +76,6 @@ def register():
             db.session.add(new_user)
             db.session.commit()
 
-            token = serializer.dumps(email, salt='email-confirm')
-
-            msg = Message('Confirm Email', sender='sqbedmail@gmail.com', recipients=[email])
-
-            link = url_for('auth.confirm_email', token=token, _external=True)
-
-            msg.body = link
-
-            mail.send(msg)
-
-            flash('Success! Please confirm your email!', 'success')
 
             return redirect(url_for('auth.login'))
             

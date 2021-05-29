@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='/bootstrap.min.css.map') }}" type="text/css">
     <link rel="stylesheet" href="{{ url_for('static', filename='/home.css') }}" type="text/css">
+     <link rel="stylesheet" href="{{ url_for('static', filename='/statistics.css') }}" type="text/css">
     {% endblock %}
 </head>
 <body>
@@ -66,6 +67,55 @@
                     </div>
                 </div>
             </nav>
+            <div style="display:inline-block;margin: 150 px;">
+                <figure class="pie-chart">
+                    <h2>Driver's mask and emotions</h2>
+                    <figcaption>
+                        with 240<span style="color:#9ecdff"></span><br>
+                        without 120<span style="color:#ff7578"></span><br>
+                    </figcaption>
+                    <cite>DriveAI</cite>
+                </figure>
+            </div>
+            <div style="display:inline-block;">
+                <dl class="chart" style="--scale: 100;">
+                    
+                    <dt class="date">Angry</dt>
+                    <dd class="bar" style="--start: 56;">
+                        <span class="value">40</span>
+                    </dd>
+
+                    <dt class="date">Happy</dt> 
+                    <dd class="bar" style="--start: 1;">
+                        <span class="value">100</span> 
+                    </dd>
+
+                    <dt class="date">Fearful</dt> 
+                    <dd class="bar" style="--start: 38;">
+                        <span class="value">60</span> 
+                    </dd>
+
+                    <dt class="date">Disgusted</dt> 
+                    <dd class="bar" style="--start: 90;">
+                        <span class="value">10</span> 
+                    </dd>
+
+                    <dt class="date">Sad</dt> 
+                    <dd class="bar" style="--start: 55;">
+                        <span class="value">55</span> 
+                    </dd>
+
+                    <dt class="date">Neutral</dt> 
+                    <dd class="bar" style="--start: 13;">
+                        <span class="value">80</span> 
+                    </dd>
+
+                    <dt class="date">Surprised</dt> 
+                    <dd class="bar" style="--start: 66;">
+                        <span class="value">35</span> 
+                    </dd>
+                </dl>
+            </div>
         </div>
     </div>
 </body>
